@@ -111,16 +111,18 @@ public class SoundClassifier {
 
     var content = ""
     do {
-      content = try String(contentsOfFile: labelPath, encoding: .utf8)
+        content = try String(contentsOfFile: labelPath, encoding: .utf8)
       let labels = content.components(separatedBy: "\n")
         .filter { !$0.isEmpty }
         .compactMap { line -> String in
           let splitPair = line.components(separatedBy: " ")
-          let label = splitPair[1]
-          let titleCasedLabel = label.components(separatedBy: "_")
-            .compactMap { $0.capitalized }
-            .joined(separator: " ")
-          return titleCasedLabel
+            var label = ""
+            for (index, element) in splitPair.enumerated() {
+                if (index != 0) {
+                    label = label + " " + element
+                }
+            }
+            return label.capitalized
         }
       return labels
     } catch {

@@ -76,10 +76,7 @@ extension ViewController: AudioInputManagerDelegate {
     present(alertController, animated: true, completion: nil)
   }
 
-  func audioInputManager(
-    _ audioInputManager: AudioInputManager,
-    didCaptureChannelData channelData: [Int16]
-  ) {
+  func audioInputManager(_ audioInputManager: AudioInputManager,didCaptureChannelData channelData: [Int16]) {
     let sampleRate = soundClassifier.sampleRate
     self.runModel(inputBuffer: Array(channelData[0..<sampleRate]))
     self.runModel(inputBuffer: Array(channelData[sampleRate..<bufferSize]))
@@ -87,10 +84,7 @@ extension ViewController: AudioInputManagerDelegate {
 }
 
 extension ViewController: SoundClassifierDelegate {
-  func soundClassifier(
-    _ soundClassifier: SoundClassifier,
-    didInterpreteProbabilities probabilities: [Float32]
-  ) {
+  func soundClassifier(_ soundClassifier: SoundClassifier,didInterpreteProbabilities probabilities: [Float32]) {
     self.probabilities = probabilities
     DispatchQueue.main.async {
       self.tableView.reloadData()
@@ -111,9 +105,8 @@ extension ViewController: UITableViewDataSource {
     ) as? ProbabilityTableViewCell else { return UITableViewCell() }
 
     cell.label.text = soundClassifier.labelNames[indexPath.row]
-    UIView.animate(withDuration: 0.4) {
-      cell.progressView.setProgress(self.probabilities[indexPath.row], animated: true)
-    }
+      cell.valueLabel.text = "\(self.probabilities[indexPath.row])"
+    
     return cell
   }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,14 +25,14 @@
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="probabilityCell" id="jad-bN-t9t" customClass="ProbabilityTableViewCell" customModule="SoundClassification" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="428" height="59.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="428" height="58.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jad-bN-t9t" id="mF2-ck-1r7">
-                                            <rect key="frame" x="0.0" y="0.0" width="428" height="59.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="428" height="58.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sma-M2-skP">
-                                                    <rect key="frame" x="20" y="19" width="80" height="21.333333333333329"/>
+                                                    <rect key="frame" x="20" y="19" width="308" height="20.666666666666671"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="3jx-1U-YDb"/>
                                                     </constraints>
@@ -40,24 +40,31 @@
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7f4-Cb-maP">
-                                                    <rect key="frame" x="108" y="27.666666666666668" width="284" height="4"/>
-                                                </progressView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hfc-jV-8z3">
+                                                    <rect key="frame" x="338" y="19" width="80" height="20.666666666666671"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.666666666666671" id="egU-Ro-b1j"/>
+                                                        <constraint firstAttribute="width" constant="80" id="y8F-87-4mv"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="7f4-Cb-maP" firstAttribute="trailing" secondItem="mF2-ck-1r7" secondAttribute="trailingMargin" constant="-16" id="6To-12-5aR"/>
                                                 <constraint firstItem="Sma-M2-skP" firstAttribute="leading" secondItem="mF2-ck-1r7" secondAttribute="leadingMargin" id="A9a-Sm-cHo"/>
+                                                <constraint firstItem="Hfc-jV-8z3" firstAttribute="leading" secondItem="Sma-M2-skP" secondAttribute="trailing" constant="10" id="CCV-UI-PlY"/>
                                                 <constraint firstItem="Sma-M2-skP" firstAttribute="top" secondItem="mF2-ck-1r7" secondAttribute="topMargin" constant="8" id="CfK-0p-2gm"/>
-                                                <constraint firstItem="7f4-Cb-maP" firstAttribute="centerY" secondItem="mF2-ck-1r7" secondAttribute="centerY" id="RMb-cU-YeY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hfc-jV-8z3" secondAttribute="trailing" constant="10" id="hTT-ad-rht"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Sma-M2-skP" secondAttribute="bottom" constant="8" id="lwc-6p-Ovf"/>
-                                                <constraint firstItem="7f4-Cb-maP" firstAttribute="leading" secondItem="Sma-M2-skP" secondAttribute="trailingMargin" constant="16" id="ulF-KF-OmH"/>
+                                                <constraint firstItem="Hfc-jV-8z3" firstAttribute="centerY" secondItem="Sma-M2-skP" secondAttribute="centerY" id="yqg-8x-dvP"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="label" destination="Sma-M2-skP" id="JPu-yY-jhc"/>
-                                            <outlet property="progressView" destination="7f4-Cb-maP" id="KKH-z7-hv4"/>
+                                            <outlet property="valueLabel" destination="Hfc-jV-8z3" id="S0q-m2-4hK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
